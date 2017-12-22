@@ -1,0 +1,30 @@
+sudo apt-get install python-rosinstall
+mkdir ~/rosbuild_ws
+cd ~/rosbuild_ws
+rosws init . /opt/ros/indigo
+mkdir package_dir
+rosws set ~/rosbuild_ws/package_dir -t .
+echo "source ~/rosbuild_ws/setup.bash" >> ~/.bashrc
+bash
+cd package_dir
+
+
+rosmake lsd_slam
+
+-
+roscore
+
+-(if camera is not at video0 you have to adapt this here)
+
+rosrun uvc_camera uvc_camera_node device:=/dev/video0 
+
+
+-
+rosrun lsd_slam_viewer viewer
+
+-
+rosrun lsd_slam_core dataset_slam _files:=/home/reepjyoti/LSD_room/images _hz:=0 _calib:=room_cameraCalibration.cfg
+rosrun lsd_slam_core dataset_slam _files:=/home/reepjyoti/LSD_GoPro/droneImages _hz:=0 _calib:=room_cameraCalibration.cfg
+
+
+(here we have to adapt the path to the calibration file of your camera, for example in this case /home/user/calibration_file.cfg)

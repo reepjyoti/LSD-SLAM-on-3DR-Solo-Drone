@@ -1,0 +1,31 @@
+import paramiko
+from scp import SCPClient
+import os.path
+
+imageName = "~/"
+ssh = paramiko.SSHClient()
+ssh.load_system_host_keys()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+ssh.connect("10.1.1.10", username="root", password="TjSDBkAu")
+print("Connected")
+scp = SCPClient(ssh.get_transport())
+if(os.path.isfile(fname)):
+	scp.get(fname)
+	scp.get(r'~/captureImage/images/', r'~/home/droneImages/')
+scp.close()
+
+
+import time 
+time.sleep(5) 
+
+
+import os.path
+os.path.exists("/etc/password.txt")
+
+
+
+
+my_file = Path("/path/to/file")
+if my_file.is_file():
+
+
