@@ -1,0 +1,33 @@
+
+import glob
+
+print("Hi")
+filePath =  "droneImages/"
+print(filePath)
+for filename in sorted(glob.iglob(filePath+'*'):
+	starttime = time.time()
+	fd = open(filename)
+	f= np.fromfile(fd,dtype=np.uint8)
+	fshape = f.reshape((1080,1920,3))
+	print("getting images: ",time.time()-starttime)
+
+
+
+	'''
+	startConversionTime = time.time()
+	rgbImage = cv2.cvtColor(fshape, cv2.COLOR_YUV2RGB, 3)
+	print("RGB conversion time: ",time.time()-startConversionTime)
+	'''
+	startGrayConversionTime = time.time()
+	gray_image = cv2.cvtColor(fshape, cv2.COLOR_BGR2GRAY)
+	print("Gray conversion time: ",time.time()-startGrayConversionTime)
+	print("Total conversion time: ",time.time()-startConversionTime)
+
+
+	writeStart = time.time()
+	gray_image.tofile("processedDrone/filename"+".jpg")
+	#cv2.imwrite("images/%d.jpg"% count, frame)
+	#gray_image.tofile("%d".rjust(10, '0')% count)		
+	print("time to write image", time.time()-writeStart)
+
+	

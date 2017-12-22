@@ -1,0 +1,15 @@
+import glob
+import cv2
+
+from crop import process
+
+#for (i,image_file) in enumerate(sorted(glob.iglob('droneImages/*.jpg'))):
+#        process(image_file, i)
+
+count = 0
+try :
+	while count> -1:
+		process('droneImages/%d.jpg'%count)
+		count = count + 1
+#except Exception:
+#	print("All files processed!")

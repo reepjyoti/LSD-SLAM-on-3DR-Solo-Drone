@@ -1,0 +1,71 @@
+
+imwrite
+0.0270268917084
+image.tofile("abc")
+0.00578999519348
+	
+
+fd = open("a")
+f= np.fromfile(fd,dtype=np.uint8)
+fshape = f.reshape((1080,1920,3))
+
+
+KeyboardInterrupt
+>>> def saveImageFile():
+...     starttime = time.time()
+...     fd = open("a")
+...     f = np.fromfile(fd,dtype=np.uint8)
+...     fshape = f.reshape((1080,1920,3))
+...     print(time.time()-starttime)
+... 
+>>> saveImageFile()
+0.00424695014954
+
+fileName = "%d".rjust(10, '0')% count
+
+
+from PIL import Image
+im = Image.fromarray(a)
+im.save("a.jpg")
+
+
+('getting images: ', 0.0001399517059326172)
+('time to write image', 0.0003399848937988281)
+('getting images: ', 0.0001399517059326172)
+('time to write image', 0.0003349781036376953)
+('getting images: ', 0.0001399517059326172)
+('time to write image', 0.0003380775451660156)
+('getting images: ', 0.0001399517059326172)
+('time to write image', 0.0003349781036376953)
+('getting images: ', 0.00013899803161621094)
+('time to write image', 0.0003371238708496094)
+
+
+
+
+('time to read camera', 0.088034868240356445)
+('time to crop image', 0.0024039745330810547)
+(592, 1280)
+('time to write image', 0.063226938247680664)
+Capturing an image...
+('time to read camera', 0.043374061584472656)
+('time to crop image', 5.7935714721679688e-05)
+(592, 1280)
+('time to write image', 0.15713787078857422)
+Capturing an image...
+('time to read camera', 0.017488956451416016)
+('time to crop image', 0.0001239776611328125)
+(592, 1280)
+('time to write image', 0.31443500518798828)
+Capturing an image...
+('time to read camera', 0.053318977355957031)
+('time to crop image', 6.29425048828125e-05)
+(592, 1280)
+('time to write image', 0.32365703582763672)
+Capturing an image...
+('time to read camera', 0.081760168075561523)
+('time to crop image', 6.29425048828125e-05)
+(592, 1280)
+('time to write image', 0.2120668888092041)
+
+

@@ -1,0 +1,5 @@
+import os
+while 1>0:	
+	os.system("rsync -avz -e ssh root@10.1.1.10:~/captureImage/images ~/sem_project/LSD_GoPro/droneImagesRsync")
+
+

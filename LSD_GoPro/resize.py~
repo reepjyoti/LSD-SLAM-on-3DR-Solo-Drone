@@ -1,0 +1,13 @@
+import cv2
+
+def process(filename, key):
+
+    image = cv2.imread(filename)
+
+    print image.shape
+
+    #imageresized = cv2.resize(image,(300,300),dim,interpolation = cv2.INTER_AREA)
+    croppedImage = image[0:100, 640:480]
+
+    cv2.imwrite( '{}.jpg'.format(key) ,croppedImage )
+    print '{}.jpg'.format(key)

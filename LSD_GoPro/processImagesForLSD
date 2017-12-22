@@ -1,0 +1,24 @@
+import os
+import cv2
+import glob
+import time
+
+def crop(image):
+	return image[8:,:]    
+	
+filePath = "17/15perSec/"
+
+processedLocation = filePath+"processed/"
+
+if not os.path.exists(processedLocation):
+	os.mkdir(processedLocation)
+
+for filename in sorted(glob.iglob(filePath+'*.jpg')):
+	starttime = time.time()
+	filenameProcessed = processedLocation + os.path.basename(filename).rjust(10, '0')
+	image = cv2.imread(filename)
+	gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+	finalImg = crop(gray_image)
+	cv2.imwrite(filenameProcessed,finalImg)
+	print("single file processing time : ",time.time()-starttime)
+

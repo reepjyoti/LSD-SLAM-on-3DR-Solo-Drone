@@ -1,0 +1,12 @@
+remove the current ffmpeg by running:
+sudo apt-get remove --purge ffmpeg
+Add ppa trusty-media:
+sudo apt-add-repository ppa:mc3man/trusty-media
+Update repo:
+sudo apt-get update
+Finally install it:
+sudo apt-get install ffmpeg
+
+
+ffmpeg -i 17.MP4 -vf fps=10 10perSec/%010d.jpg
+
