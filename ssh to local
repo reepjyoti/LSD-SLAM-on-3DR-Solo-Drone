@@ -14,7 +14,7 @@ if(os.path.isfile(fname)):
 	scp.get(r'~/captureImage/images/', r'~/home/droneImages/')
 scp.close()
 
-
+'''
 import time 
 time.sleep(5) 
 
@@ -27,5 +27,4 @@ os.path.exists("/etc/password.txt")
 
 my_file = Path("/path/to/file")
 if my_file.is_file():
-
-
+'''
